@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<h2>Export Table with Census Joins </h2>
+<!-- Response menu -->
+
+<div class="row">
+    <div class="col-md-6">
+    <form id="remote-census">
+        <input tabindex=0 class="typeahead form-control" type="text" placeholder="Find a topic by table or column name...">
+    </form>
+    </div>
+
+    <div class="col-md-6">
+    <ol class="list-group tables-list">
+    </ol>
+    <a href="#" class="submit-census">Download data</a>
+    </div>
+</ol>
+</div>

@@ -1,0 +1,90 @@
+html, body { height: 100%; }
+#map { height: 540px; }
+#data-explorer { margin-top: 40 }
+#response-container {height: 45}
+#places {display: block; float:left}
+#placelist-container {
+    display: block;
+    overflow: scroll;
+}
+option {
+    width: 300px;
+    overflow:visible;
+}
+.dangerous {background-color: red}
+.twitter-typeahead .tt-hint { display: none; }
+
+#description { margin: 10px; max-width: 500px; }
+
+.tt-query {
+  -webkit-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+     -moz-box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+          box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075);
+}
+
+.tt-hint {
+  color: #999
+}
+
+.tt-dropdown-menu {
+  width: 422px;
+  margin-top: 4px;
+  padding: 4px 0;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  -webkit-border-radius: 4px;
+     -moz-border-radius: 4px;
+          border-radius: 4px;
+  -webkit-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+     -moz-box-shadow: 0 5px 10px rgba(0,0,0,.2);
+          box-shadow: 0 5px 10px rgba(0,0,0,.2);
+
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.tt-suggestion {
+  padding: 1.25em .83em .83em;
+  line-height: 24px;
+}
+
+.tt-suggestion.tt-cursor {
+  color: #fff;
+  background-color: #0097cf;
+
+}
+
+.tt-suggestion p {
+  margin: 0;
+}
+
+/* special border for census suggestions*/
+#remote-census .tt-suggestion {
+  display: block;
+  padding: 1.25em .83em .83em;
+  margin: 0;
+  border-bottom: 1px solid #e0e0e0;
+  line-height: 24px;
+}
+#remote-census .twitter-typeahead {
+  display: block;
+  width: 100%;
+}
+
+.result-name .result-type {
+    float: right;
+    margin: .17em .33em 0 1em;
+    font-size: .83em;
+    font-style: italic;
+}
+
+/* for census suggestions table */
+a.submit-census {
+    cursor: pointer;
+    font-style: bold;
+}
+
+span.delete {
+  cursor: pointer;
+}

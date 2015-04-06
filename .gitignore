@@ -1,0 +1,12 @@
+*.pyc
+*.swp
+runconfig.py
+app/config.py
+app/static/map/
+app/upload/*
+flask-env/
+env/
+*.log
+*.Rd
+*.Rproj*
+.Rproj.user

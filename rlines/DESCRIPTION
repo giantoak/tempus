@@ -1,0 +1,18 @@
+Package: rlines
+Type: Package
+Title: Difference-in-differences for Tempus
+Version: 1.0
+Imports: plyr,
+    reshape2,
+    Quandl, 
+    MASS, 
+    MatchIt, 
+    TSA
+Date: 2014-11-10
+Author: Jeffrey Borowitz <jeffrey.borowitz@giantoak.com>
+Maintainer: Jeffrey Borowitz <jeffrey.borowitz@giantoak.com>
+Description: Gets city-level comparison groups within the United States, and
+automates the performance of diff-in-diff between those groups.
+License: MIT
+LazyData: TRUE
+Packaged: 2015-01-23 23:07:39 UTC; root

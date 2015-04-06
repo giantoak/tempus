@@ -1,0 +1,135 @@
+body {
+	font-family: Arial,Helvetica,sans-serif;
+}
+.apertureTooltipSE, .apertureTooltipNE, .apertureTooltipSW, .apertureTooltipNW {
+	padding: 5px 10px;
+	background-color: #FFFDE5;
+	-moz-border-radius: 5px;
+	-webkit-border-radius: 5px;
+	border-radius: 5px;
+	border: 1px solid #888;
+	font-size: 12px;
+	opacity: 0.85;
+}
+
+.searchTable {
+    position: absolute;
+    top: 300px;
+    bottom: 0px;
+    width: 98%;
+    margin: 10px;
+}
+
+.ui-button {
+    font-size: 0.7em;
+    margin-left: 5px;
+    margin-right: 5px;
+}
+
+.ui-dialog {
+    font-size: 0.7em;
+}
+
+.strongAttrHeader {
+    font-weight: bold;
+    vertical-align: middle;
+    background-color: #EEE;
+}
+
+.highlightedRow {
+    background-color: #AFA !important;
+}
+
+.weakAttrHeader {
+    font-style: italic;
+    vertical-align: middle;
+    background-color: #EEE;
+}
+
+.moduleHeader {
+	background:#DEDEDE;
+	color:#076B88;
+	font-weight:bold;
+	font-family: Arial,Helvetica,sans-serif;
+    z-index: 1;
+    right: 0px
+}
+
+.ellipsis {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -o-text-overflow: ellipsis;
+}
+
+.ui-button .ui-icon.person {
+    background-image: url(../img/person_16.png);
+    position:relative;
+    top:10px;
+    left:2px;
+    width: 20px;
+    height: 20px;
+}
+
+.ui-button .ui-icon.organization {
+    background-image: url(../img/org_16.png);
+    position:relative;
+    top:10px;
+    left:2px;
+    width: 20px;
+    height: 20px;
+}
+
+.ui-button .ui-icon.place {
+    background-image: url(../img/place_16.png);
+    position:relative;
+    top:10px;
+    left:2px;
+    width: 20px;
+    height: 20px;
+}
+
+.logoutButton .ui-button-text {
+	padding: .1em .5em;
+}
+
+.defocusbutton .ui-button-text {
+	margin-top:-5px;	
+}
+
+.ui-buttonset .ui-state-active {
+    z-index: 1;
+    border:2px solid darkblue;
+}
+
+.timeline_handle_right{
+	opacity:0.5;
+	background-image: url("../img/timeline_end.png");
+	width:10px;
+	height:24px;
+}
+
+.timeline_handle_left{
+	opacity:0.5;
+	background-image: url("../img/timeline_start.png");
+	width:10px;
+	height:24px;
+}
+
+.timeline_handle_resize{
+	opacity:0.5;
+	background-image: url("../img/timeline_resize.png");
+	width:10px;
+	height:24px;
+}
+
+.timeline_handle_background{
+	opacity:1.0;
+	background-image: url("../img/timectrlbg.png");
+	background-repeat: repeat-x;
+	width:100px;
+	height:24px;
+	left:50px;
+	position: absolute;
+	z-index:1;
+}

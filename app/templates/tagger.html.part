@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+
+<h2>Analyst-Driven Geocoding</h2>
+<div class="row collapse" id="description">
+<p>
+To obtain population counts for each ad location, we need to look up each
+place in a canonical database, a process called geocoding. Sometimes
+place names fail to resolve automatically--those are the places in the
+"Failed to Geocode" selection box. Other times, places are geocoded
+incorrectly. The "Geocoded Places" selection contains both correct codings
+as well as mistakes. It was ordered in descending order from the most
+likely to be erroneous to the least, based off of our expectation of
+what the ratio of ad counts to the population should look like.
+The most egregious ratios are highlighted in red.
+
+<p>
+To geocode a location, select it, and begin typing its name in the
+search box that appears. Some legwork may be required to figure out
+the canonical name for a location. For example, the Wikipedia page for
+"Inland Empire, CA" reveals that it is actually called the "Riverside-San
+Bernardino-Ontario metropolitan area".  Select the most accurate name
+from the autocomplete dropdown, and press enter or "Accept".
+
+<p>
+Our current data source (the US Census) has no information on non-US
+locations. Those should be discarded.  To discard a place, select it, and
+press the discard button. No data is deleted from the server.
+
+</div>
+
+<p><a class="btn" data-toggle="collapse" data-target="#description">Instructions&raquo;</a></p>
+<!-- Places select menus -->
+<div id="places">
+    <span class="placelist-container">
+    <div>
+        <label for="untagged">Failed to Geocode ("Place: Ad Count")</label>
+    </div>
+
+    <div>
+        <select id="untagged" class="geotag-select" size="10">
+        {% for loc, count, loc_id in untagged %}
+            <option value="{{loc_id}}" 
+                data-name="{{loc}}" 
+                data-count="{{count}}"
+                title="{{loc}}: {{count}}"
+                class="geotag-option">
+                {{loc}}: {{count}}
+            </option>
+        {% endfor %}
+        </select>
+    </div>
+    </span>
+    
+    <span class="placelist-container">
+    <div>
+        <label for="tagged">Geocoded Places ("Place: Ad/Population Ratio")</label>
+    </div>
+    <div>
+        <select id="tagged" class="geotag-select" size="10">
+        </select>
+    </div>
+    </span>
+    
+    <span class="placelist-container">
+    <div>
+        <label for="trash">Discarded Places</label>
+    </div>
+    <div>
+        <select id="trash" class="geotag-select" size="10">
+        {% for loc, count, loc_id, label in trashed %}
+            <option value="{{loc_id}}" 
+                data-name="{{loc}}" 
+                data-count="{{count}}" 
+                data-orig="{{label}}"
+                class="geotag-option"
+                title="{{loc}}: {{count}}">
+                {{loc}}: {{count}}
+            </option>
+        {% endfor %}
+        </select>
+    </div>
+    </span>
+
+<!-- Response menu -->
+
+<div id="response-container">
+    <div id="response">
+        <div>
+            <form id="remote">
+                <input type="submit" id="accept_button" value="Accept">
+                <input type="button" id="discard_button" value="Discard">
+                <input class="typeahead form-control" type="text" placeholder="Suggested Place Name">
+            </form>
+        </div>
+    </div>
+</div>
+
+</div>
+<!-- Map -->
+
+ <div id="map"></div>

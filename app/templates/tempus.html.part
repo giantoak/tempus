@@ -1,0 +1,950 @@
+<!DOCTYPE html>
+
+<div id='container' class='container'>
+    <div id='content-body'>
+        <div class='head'>
+            <!--<ul>-->
+            <!--<li><a href='http://metricsgraphicsjs.org/'>Home</a></li>-->
+            <!--<li><a href='https://github.com/mozilla/metrics-graphics/releases'>Download</a></li>-->
+            <!--<li><a href='interactive-demo.htm'>Interactive</a></li>-->
+            <!--<li><a href='https://github.com/mozilla/metrics-graphics'>Code</a></li>-->
+            <!--<li><a href='https://github.com/mozilla/metrics-graphics/issues'>Issues</a></li>-->
+            <!--<li class='divider'>|</li>-->
+            <!--<li><a href='#' id='light-css' class='pill active'>Light style</a></li>-->
+            <!--<li><a href='#' id='dark-css' class='pill'>Dark style</a></li>-->
+            <!--<li class='float-right no-padding'><a class='selected examples-options' href='dev.htm'>DEV</a></li>-->
+            <!--<li class='float-right'><a class='examples-options' href='examples.htm'>RELEASE</a></li>-->
+            <!--</ul>-->
+
+        <div class='row'>
+                <div class='col-lg-10'>
+        <h2>Tempus</h2>
+            An application designed to aid with the interpretation of time
+            series data. Tempus helps users generate sane comparison groups
+            and identify the effect of events of interest on 
+            outcomes of interest.
+        </div>
+                <div class='col-lg-2'>
+                    <img src='http://www.giantoak.com/wp-content/themes/giantoak/images/logo.png' alt="Giant Oak Logo" width="100px">
+                </div>
+        </div>
+        <div id='trunk'>
+            <div class='row trunk-section'>
+                <h2 class='trunk-title'>Controls</h2>
+                <br>
+                <div class='col-lg-6 control-label'>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Select Target Geography:
+                        </div>
+                        <div class="btn-group col-lg-5">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <select class="form-control" id="id_target" name="target">
+                                    <option value="dc">dc</option>
+                                    <option value="baltimore">baltimore</option>
+                                    <option value="abilene">abilene</option>
+                                    <option value="akroncanton">akroncanton</option>
+                                    <option value="albany">albany</option>
+                                    <option value="albanyga">albanyga</option>
+                                    <option value="albuquerque">albuquerque</option>
+                                    <option value="alexandria">alexandria</option>
+                                    <option value="allentown">allentown</option>
+                                    <option value="altoona">altoona</option>
+                                    <option value="amarillo">amarillo</option>
+                                    <option value="anchorage">anchorage</option>
+                                    <option value="annapolis">annapolis</option>
+                                    <option value="annarbor">annarbor</option>
+                                    <option value="appleton">appleton</option>
+                                    <option value="arlington">arlington</option>
+                                    <option value="asheville">asheville</option>
+                                    <option value="athensga">athensga</option>
+                                    <option value="athensoh">athensoh</option>
+                                    <option value="atlanta">atlanta</option>
+                                    <option value="auburn">auburn</option>
+                                    <option value="augusta">augusta</option>
+                                    <option value="austin">austin</option>
+                                    <option value="bakersfield">bakersfield</option>
+                                    <option value="baltimore">baltimore</option>
+                                    <option value="batonrouge">batonrouge</option>
+                                    <option value="battlecreek">battlecreek</option>
+                                    <option value="beaumont">beaumont</option>
+                                    <option value="bellingham">bellingham</option>
+                                    <option value="bend">bend</option>
+                                    <option value="bigisland">bigisland</option>
+                                    <option value="biloxi">biloxi</option>
+                                    <option value="binghamton">binghamton</option>
+                                    <option value="birmingham">birmingham</option>
+                                    <option value="bismarck">bismarck</option>
+                                    <option value="blacksburg">blacksburg</option>
+                                    <option value="bloomington">bloomington</option>
+                                    <option value="bloomingtonin">bloomingtonin</option>
+                                    <option value="boulder">boulder</option>
+                                    <option value="bowlinggreen">bowlinggreen</option>
+                                    <option value="bronx">bronx</option>
+                                    <option value="brooklyn">brooklyn</option>
+                                    <option value="brownsville">brownsville</option>
+                                    <option value="buffalo">buffalo</option>
+                                    <option value="capecod">capecod</option>
+                                    <option value="carbondale">carbondale</option>
+                                    <option value="catskills">catskills</option>
+                                    <option value="cedarrapids">cedarrapids</option>
+                                    <option value="centraljersey">centraljersey</option>
+                                    <option value="centralmich">centralmich</option>
+                                    <option value="chambana">chambana</option>
+                                    <option value="charleston">charleston</option>
+                                    <option value="charlestonwv">charlestonwv</option>
+                                    <option value="charlotte">charlotte</option>
+                                    <option value="charlottesville">charlottesville</option>
+                                    <option value="chattanooga">chattanooga</option>
+                                    <option value="chesapeake">chesapeake</option>
+                                    <option value="chicago">chicago</option>
+                                    <option value="chico">chico</option>
+                                    <option value="chillicothe">chillicothe</option>
+                                    <option value="cincinnati">cincinnati</option>
+                                    <option value="clarksville">clarksville</option>
+                                    <option value="cleveland">cleveland</option>
+                                    <option value="clovis">clovis</option>
+                                    <option value="collegestation">collegestation</option>
+                                    <option value="coloradosprings">coloradosprings</option>
+                                    <option value="columbia">columbia</option>
+                                    <option value="columbiamo">columbiamo</option>
+                                    <option value="columbus">columbus</option>
+                                    <option value="columbusga">columbusga</option>
+                                    <option value="cookeville">cookeville</option>
+                                    <option value="corpuschristi">corpuschristi</option>
+                                    <option value="corvallis">corvallis</option>
+                                    <option value="cumberlandvalley">cumberlandvalley</option>
+                                    <option value="dallas">dallas</option>
+                                    <option value="danville">danville</option>
+                                    <option value="dayton">dayton</option>
+                                    <option value="daytona">daytona</option>
+                                    <option value="dc">dc</option>
+                                    <option value="decatur">decatur</option>
+                                    <option value="delrio">delrio</option>
+                                    <option value="denton">denton</option>
+                                    <option value="denver">denver</option>
+                                    <option value="desmoines">desmoines</option>
+                                    <option value="detroit">detroit</option>
+                                    <option value="dothan">dothan</option>
+                                    <option value="dubuque">dubuque</option>
+                                    <option value="duluth">duluth</option>
+                                    <option value="eastbay">eastbay</option>
+                                    <option value="easternnc">easternnc</option>
+                                    <option value="easternshore">easternshore</option>
+                                    <option value="eastidaho">eastidaho</option>
+                                    <option value="eastky">eastky</option>
+                                    <option value="eastoregon">eastoregon</option>
+                                    <option value="eauclaire">eauclaire</option>
+                                    <option value="elmira">elmira</option>
+                                    <option value="elpaso">elpaso</option>
+                                    <option value="erie">erie</option>
+                                    <option value="eugene">eugene</option>
+                                    <option value="evansville">evansville</option>
+                                    <option value="everett">everett</option>
+                                    <option value="fargo">fargo</option>
+                                    <option value="farmington">farmington</option>
+                                    <option value="fayetteville">fayetteville</option>
+                                    <option value="fayettevillenc">fayettevillenc</option>
+                                    <option value="fingerlakes">fingerlakes</option>
+                                    <option value="flagstaff">flagstaff</option>
+                                    <option value="flint">flint</option>
+                                    <option value="florence">florence</option>
+                                    <option value="fortcollins">fortcollins</option>
+                                    <option value="fortdodge">fortdodge</option>
+                                    <option value="fortmyers">fortmyers</option>
+                                    <option value="fortsmith">fortsmith</option>
+                                    <option value="fortwayne">fortwayne</option>
+                                    <option value="fortworth">fortworth</option>
+                                    <option value="frederick">frederick</option>
+                                    <option value="fredericksburg">fredericksburg</option>
+                                    <option value="fresno">fresno</option>
+                                    <option value="ftlauderdale">ftlauderdale</option>
+                                    <option value="gadsden">gadsden</option>
+                                    <option value="gainesville">gainesville</option>
+                                    <option value="galveston">galveston</option>
+                                    <option value="grandforks">grandforks</option>
+                                    <option value="grandisland">grandisland</option>
+                                    <option value="grandrapids">grandrapids</option>
+                                    <option value="greenbay">greenbay</option>
+                                    <option value="greensboro">greensboro</option>
+                                    <option value="greenville">greenville</option>
+                                    <option value="hampton">hampton</option>
+                                    <option value="harrisburg">harrisburg</option>
+                                    <option value="harrisonburg">harrisonburg</option>
+                                    <option value="hartford">hartford</option>
+                                    <option value="hattiesburg">hattiesburg</option>
+                                    <option value="hickory">hickory</option>
+                                    <option value="hiltonhead">hiltonhead</option>
+                                    <option value="honolulu">honolulu</option>
+                                    <option value="houma">houma</option>
+                                    <option value="houston">houston</option>
+                                    <option value="hudsonvalley">hudsonvalley</option>
+                                    <option value="humboldt">humboldt</option>
+                                    <option value="huntington">huntington</option>
+                                    <option value="huntingtonoh">huntingtonoh</option>
+                                    <option value="huntsville">huntsville</option>
+                                    <option value="huntsvilletx">huntsvilletx</option>
+                                    <option value="imperial">imperial</option>
+                                    <option value="indianapolis">indianapolis</option>
+                                    <option value="inlandempire">inlandempire</option>
+                                    <option value="iowacity">iowacity</option>
+                                    <option value="ithaca">ithaca</option>
+                                    <option value="jackson">jackson</option>
+                                    <option value="jacksonmi">jacksonmi</option>
+                                    <option value="jacksonville">jacksonville</option>
+                                    <option value="janesville">janesville</option>
+                                    <option value="jerseyshore">jerseyshore</option>
+                                    <option value="jonesboro">jonesboro</option>
+                                    <option value="joplin">joplin</option>
+                                    <option value="kalamazoo">kalamazoo</option>
+                                    <option value="kauai">kauai</option>
+                                    <option value="kc">kc</option>
+                                    <option value="keys">keys</option>
+                                    <option value="killeen">killeen</option>
+                                    <option value="klamath">klamath</option>
+                                    <option value="knoxville">knoxville</option>
+                                    <option value="kokomo">kokomo</option>
+                                    <option value="lacrosse">lacrosse</option>
+                                    <option value="lafayette">lafayette</option>
+                                    <option value="lakecharles">lakecharles</option>
+                                    <option value="lakeland">lakeland</option>
+                                    <option value="lansing">lansing</option>
+                                    <option value="laredo">laredo</option>
+                                    <option value="lasalle">lasalle</option>
+                                    <option value="lascruces">lascruces</option>
+                                    <option value="lasvegas">lasvegas</option>
+                                    <option value="lawrence">lawrence</option>
+                                    <option value="lawton">lawton</option>
+                                    <option value="lewiston">lewiston</option>
+                                    <option value="lexington">lexington</option>
+                                    <option value="limaoh">limaoh</option>
+                                    <option value="lincoln">lincoln</option>
+                                    <option value="littlerock">littlerock</option>
+                                    <option value="logan">logan</option>
+                                    <option value="longbeach">longbeach</option>
+                                    <option value="longisland">longisland</option>
+                                    <option value="losangeles">losangeles</option>
+                                    <option value="louisville">louisville</option>
+                                    <option value="loz">loz</option>
+                                    <option value="lubbock">lubbock</option>
+                                    <option value="lynchburg">lynchburg</option>
+                                    <option value="macon">macon</option>
+                                    <option value="madison">madison</option>
+                                    <option value="manhattan" selected="selected">manhattan</option>
+                                    <option value="manhattanks">manhattanks</option>
+                                    <option value="mankato">mankato</option>
+                                    <option value="mansfield">mansfield</option>
+                                    <option value="masoncity">masoncity</option>
+                                    <option value="maui">maui</option>
+                                    <option value="mcallen">mcallen</option>
+                                    <option value="medford">medford</option>
+                                    <option value="memphis">memphis</option>
+                                    <option value="merced">merced</option>
+                                    <option value="meridian">meridian</option>
+                                    <option value="miami">miami</option>
+                                    <option value="milwaukee">milwaukee</option>
+                                    <option value="minneapolis">minneapolis</option>
+                                    <option value="minot">minot</option>
+                                    <option value="mobile">mobile</option>
+                                    <option value="modesto">modesto</option>
+                                    <option value="mohave">mohave</option>
+                                    <option value="monroe">monroe</option>
+                                    <option value="monroemi">monroemi</option>
+                                    <option value="monterey">monterey</option>
+                                    <option value="montgomery">montgomery</option>
+                                    <option value="morgantown">morgantown</option>
+                                    <option value="moseslake">moseslake</option>
+                                    <option value="mtvernon">mtvernon</option>
+                                    <option value="muncie">muncie</option>
+                                    <option value="muskegon">muskegon</option>
+                                    <option value="myrtlebeach">myrtlebeach</option>
+                                    <option value="nashville">nashville</option>
+                                    <option value="newhaven">newhaven</option>
+                                    <option value="newlondon">newlondon</option>
+                                    <option value="neworleans">neworleans</option>
+                                    <option value="newportnews">newportnews</option>
+                                    <option value="norfolk">norfolk</option>
+                                    <option value="northbay">northbay</option>
+                                    <option value="northernmichigan">northernmichigan</option>
+                                    <option value="northjersey">northjersey</option>
+                                    <option value="northmiss">northmiss</option>
+                                    <option value="northplatte">northplatte</option>
+                                    <option value="nova">nova</option>
+                                    <option value="nwct">nwct</option>
+                                    <option value="nwga">nwga</option>
+                                    <option value="ocala">ocala</option>
+                                    <option value="odessa">odessa</option>
+                                    <option value="ogden">ogden</option>
+                                    <option value="oklahomacity">oklahomacity</option>
+                                    <option value="olympia">olympia</option>
+                                    <option value="omaha">omaha</option>
+                                    <option value="orangecounty">orangecounty</option>
+                                    <option value="oregoncoast">oregoncoast</option>
+                                    <option value="orlando">orlando</option>
+                                    <option value="ottumwa">ottumwa</option>
+                                    <option value="outerbanks">outerbanks</option>
+                                    <option value="owensboro">owensboro</option>
+                                    <option value="palmdale">palmdale</option>
+                                    <option value="palmsprings">palmsprings</option>
+                                    <option value="panamacity">panamacity</option>
+                                    <option value="parkersburg">parkersburg</option>
+                                    <option value="pennstate">pennstate</option>
+                                    <option value="pensacola">pensacola</option>
+                                    <option value="peoria">peoria</option>
+                                    <option value="philadelphia">philadelphia</option>
+                                    <option value="phoenix">phoenix</option>
+                                    <option value="pittsburgh">pittsburgh</option>
+                                    <option value="plattsburgh">plattsburgh</option>
+                                    <option value="poconos">poconos</option>
+                                    <option value="porthuron">porthuron</option>
+                                    <option value="portland">portland</option>
+                                    <option value="portsmouth">portsmouth</option>
+                                    <option value="prescott">prescott</option>
+                                    <option value="provo">provo</option>
+                                    <option value="pueblo">pueblo</option>
+                                    <option value="pullman">pullman</option>
+                                    <option value="quadcities">quadcities</option>
+                                    <option value="queens">queens</option>
+                                    <option value="quincy">quincy</option>
+                                    <option value="racine">racine</option>
+                                    <option value="raleigh">raleigh</option>
+                                    <option value="redding">redding</option>
+                                    <option value="reno">reno</option>
+                                    <option value="richmond">richmond</option>
+                                    <option value="richmondin">richmondin</option>
+                                    <option value="roanoke">roanoke</option>
+                                    <option value="rochester">rochester</option>
+                                    <option value="rochestermn">rochestermn</option>
+                                    <option value="rockford">rockford</option>
+                                    <option value="rockies">rockies</option>
+                                    <option value="roseburg">roseburg</option>
+                                    <option value="roswell">roswell</option>
+                                    <option value="sacramento">sacramento</option>
+                                    <option value="saginaw">saginaw</option>
+                                    <option value="salem">salem</option>
+                                    <option value="saltlakecity">saltlakecity</option>
+                                    <option value="sanantonio">sanantonio</option>
+                                    <option value="sandiego">sandiego</option>
+                                    <option value="sandusky">sandusky</option>
+                                    <option value="sanfernandovalley">sanfernandovalley</option>
+                                    <option value="sangabrielvalley">sangabrielvalley</option>
+                                    <option value="sanjose">sanjose</option>
+                                    <option value="sanluisobispo">sanluisobispo</option>
+                                    <option value="sanmarcos">sanmarcos</option>
+                                    <option value="sanmateo">sanmateo</option>
+                                    <option value="santabarbara">santabarbara</option>
+                                    <option value="santacruz">santacruz</option>
+                                    <option value="santafe">santafe</option>
+                                    <option value="santamaria">santamaria</option>
+                                    <option value="sarasota">sarasota</option>
+                                    <option value="savannah">savannah</option>
+                                    <option value="scranton">scranton</option>
+                                    <option value="seattle">seattle</option>
+                                    <option value="semo">semo</option>
+                                    <option value="sf">sf</option>
+                                    <option value="sheboygan">sheboygan</option>
+                                    <option value="shreveport">shreveport</option>
+                                    <option value="sierravista">sierravista</option>
+                                    <option value="siouxcity">siouxcity</option>
+                                    <option value="siskiyou">siskiyou</option>
+                                    <option value="southbend">southbend</option>
+                                    <option value="southcoast">southcoast</option>
+                                    <option value="southernmaryland">southernmaryland</option>
+                                    <option value="southernwestvirginia">southernwestvirginia</option>
+                                    <option value="southjersey">southjersey</option>
+                                    <option value="spacecoast">spacecoast</option>
+                                    <option value="spokane">spokane</option>
+                                    <option value="springfieldil">springfieldil</option>
+                                    <option value="springfieldmo">springfieldmo</option>
+                                    <option value="statesboro">statesboro</option>
+                                    <option value="stcloud">stcloud</option>
+                                    <option value="stgeorge">stgeorge</option>
+                                    <option value="stillwater">stillwater</option>
+                                    <option value="stjoseph">stjoseph</option>
+                                    <option value="stlouis">stlouis</option>
+                                    <option value="stockton">stockton</option>
+                                    <option value="suffolk">suffolk</option>
+                                    <option value="swmi">swmi</option>
+                                    <option value="swva">swva</option>
+                                    <option value="syracuse">syracuse</option>
+                                    <option value="tacoma">tacoma</option>
+                                    <option value="tallahassee">tallahassee</option>
+                                    <option value="tampa">tampa</option>
+                                    <option value="terrehaute">terrehaute</option>
+                                    <option value="texarkana">texarkana</option>
+                                    <option value="texoma">texoma</option>
+                                    <option value="tippecanoe">tippecanoe</option>
+                                    <option value="toledo">toledo</option>
+                                    <option value="topeka">topeka</option>
+                                    <option value="treasurecoast">treasurecoast</option>
+                                    <option value="tricities">tricities</option>
+                                    <option value="tricitieswa">tricitieswa</option>
+                                    <option value="tucson">tucson</option>
+                                    <option value="tulsa">tulsa</option>
+                                    <option value="tuscaloosa">tuscaloosa</option>
+                                    <option value="tuscarawas">tuscarawas</option>
+                                    <option value="twinfalls">twinfalls</option>
+                                    <option value="twintiers">twintiers</option>
+                                    <option value="tyler">tyler</option>
+                                    <option value="up">up</option>
+                                    <option value="utica">utica</option>
+                                    <option value="valdosta">valdosta</option>
+                                    <option value="ventura">ventura</option>
+                                    <option value="victoriatx">victoriatx</option>
+                                    <option value="virginiabeach">virginiabeach</option>
+                                    <option value="visalia">visalia</option>
+                                    <option value="waco">waco</option>
+                                    <option value="waterloo">waterloo</option>
+                                    <option value="watertown">watertown</option>
+                                    <option value="wausau">wausau</option>
+                                    <option value="wenatchee">wenatchee</option>
+                                    <option value="westchester">westchester</option>
+                                    <option value="westernmaryland">westernmaryland</option>
+                                    <option value="westky">westky</option>
+                                    <option value="westpalmbeach">westpalmbeach</option>
+                                    <option value="westslope">westslope</option>
+                                    <option value="wheeling">wheeling</option>
+                                    <option value="wichita">wichita</option>
+                                    <option value="wichitafalls">wichitafalls</option>
+                                    <option value="williamsport">williamsport</option>
+                                    <option value="wilmington">wilmington</option>
+                                    <option value="winstonsalem">winstonsalem</option>
+                                    <option value="yakima">yakima</option>
+                                    <option value="york">york</option>
+                                    <option value="youngstown">youngstown</option>
+                                    <option value="yuma">yuma</option>
+                                    <option value="zanesville">zanesville</option>
+                                </select>
+                            </a>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5 control-label'>
+                            Select Comparison Geography:
+                        </div>
+                        <div class="btn-group col-lg-5">
+                            <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                                <select class="form-control" id="id_comparison" name="comparison" multiple>
+                                    <option value="bronx" selected="selected">bronx</option>
+                                    <option value="brooklyn" selected="selected">brooklyn</option>
+                                    <option value="queens" selected="selected">queens</option>
+                                    <option value="abilene">abilene</option>
+                                    <option value="akroncanton">akroncanton</option>
+                                    <option value="albany">albany</option>
+                                    <option value="albanyga">albanyga</option>
+                                    <option value="albuquerque">albuquerque</option>
+                                    <option value="alexandria">alexandria</option>
+                                    <option value="allentown">allentown</option>
+                                    <option value="altoona">altoona</option>
+                                    <option value="amarillo">amarillo</option>
+                                    <option value="anchorage">anchorage</option>
+                                    <option value="annapolis">annapolis</option>
+                                    <option value="annarbor">annarbor</option>
+                                    <option value="appleton">appleton</option>
+                                    <option value="arlington">arlington</option>
+                                    <option value="asheville">asheville</option>
+                                    <option value="athensga">athensga</option>
+                                    <option value="athensoh">athensoh</option>
+                                    <option value="atlanta">atlanta</option>
+                                    <option value="auburn">auburn</option>
+                                    <option value="augusta">augusta</option>
+                                    <option value="austin">austin</option>
+                                    <option value="bakersfield">bakersfield</option>
+                                    <option value="baltimore">baltimore</option>
+                                    <option value="batonrouge">batonrouge</option>
+                                    <option value="battlecreek">battlecreek</option>
+                                    <option value="beaumont">beaumont</option>
+                                    <option value="bellingham">bellingham</option>
+                                    <option value="bend">bend</option>
+                                    <option value="bigisland">bigisland</option>
+                                    <option value="biloxi">biloxi</option>
+                                    <option value="binghamton">binghamton</option>
+                                    <option value="birmingham">birmingham</option>
+                                    <option value="bismarck">bismarck</option>
+                                    <option value="blacksburg">blacksburg</option>
+                                    <option value="bloomington">bloomington</option>
+                                    <option value="bloomingtonin">bloomingtonin</option>
+                                    <option value="boulder">boulder</option>
+                                    <option value="bowlinggreen">bowlinggreen</option>
+                                    <option value="brownsville">brownsville</option>
+                                    <option value="buffalo">buffalo</option>
+                                    <option value="capecod">capecod</option>
+                                    <option value="carbondale">carbondale</option>
+                                    <option value="catskills">catskills</option>
+                                    <option value="cedarrapids">cedarrapids</option>
+                                    <option value="centraljersey">centraljersey</option>
+                                    <option value="centralmich">centralmich</option>
+                                    <option value="chambana">chambana</option>
+                                    <option value="charleston">charleston</option>
+                                    <option value="charlestonwv">charlestonwv</option>
+                                    <option value="charlotte">charlotte</option>
+                                    <option value="charlottesville">charlottesville</option>
+                                    <option value="chattanooga">chattanooga</option>
+                                    <option value="chesapeake">chesapeake</option>
+                                    <option value="chicago">chicago</option>
+                                    <option value="chico">chico</option>
+                                    <option value="chillicothe">chillicothe</option>
+                                    <option value="cincinnati">cincinnati</option>
+                                    <option value="clarksville">clarksville</option>
+                                    <option value="cleveland">cleveland</option>
+                                    <option value="clovis">clovis</option>
+                                    <option value="collegestation">collegestation</option>
+                                    <option value="coloradosprings">coloradosprings</option>
+                                    <option value="columbia">columbia</option>
+                                    <option value="columbiamo">columbiamo</option>
+                                    <option value="columbus">columbus</option>
+                                    <option value="columbusga">columbusga</option>
+                                    <option value="cookeville">cookeville</option>
+                                    <option value="corpuschristi">corpuschristi</option>
+                                    <option value="corvallis">corvallis</option>
+                                    <option value="cumberlandvalley">cumberlandvalley</option>
+                                    <option value="dallas">dallas</option>
+                                    <option value="danville">danville</option>
+                                    <option value="dayton">dayton</option>
+                                    <option value="daytona">daytona</option>
+                                    <option value="dc">dc</option>
+                                    <option value="decatur">decatur</option>
+                                    <option value="delrio">delrio</option>
+                                    <option value="denton">denton</option>
+                                    <option value="denver">denver</option>
+                                    <option value="desmoines">desmoines</option>
+                                    <option value="detroit">detroit</option>
+                                    <option value="dothan">dothan</option>
+                                    <option value="dubuque">dubuque</option>
+                                    <option value="duluth">duluth</option>
+                                    <option value="eastbay">eastbay</option>
+                                    <option value="easternnc">easternnc</option>
+                                    <option value="easternshore">easternshore</option>
+                                    <option value="eastidaho">eastidaho</option>
+                                    <option value="eastky">eastky</option>
+                                    <option value="eastoregon">eastoregon</option>
+                                    <option value="eauclaire">eauclaire</option>
+                                    <option value="elmira">elmira</option>
+                                    <option value="elpaso">elpaso</option>
+                                    <option value="erie">erie</option>
+                                    <option value="eugene">eugene</option>
+                                    <option value="evansville">evansville</option>
+                                    <option value="everett">everett</option>
+                                    <option value="fargo">fargo</option>
+                                    <option value="farmington">farmington</option>
+                                    <option value="fayetteville">fayetteville</option>
+                                    <option value="fayettevillenc">fayettevillenc</option>
+                                    <option value="fingerlakes">fingerlakes</option>
+                                    <option value="flagstaff">flagstaff</option>
+                                    <option value="flint">flint</option>
+                                    <option value="florence">florence</option>
+                                    <option value="fortcollins">fortcollins</option>
+                                    <option value="fortdodge">fortdodge</option>
+                                    <option value="fortmyers">fortmyers</option>
+                                    <option value="fortsmith">fortsmith</option>
+                                    <option value="fortwayne">fortwayne</option>
+                                    <option value="fortworth">fortworth</option>
+                                    <option value="frederick">frederick</option>
+                                    <option value="fredericksburg">fredericksburg</option>
+                                    <option value="fresno">fresno</option>
+                                    <option value="ftlauderdale">ftlauderdale</option>
+                                    <option value="gadsden">gadsden</option>
+                                    <option value="gainesville">gainesville</option>
+                                    <option value="galveston">galveston</option>
+                                    <option value="grandforks">grandforks</option>
+                                    <option value="grandisland">grandisland</option>
+                                    <option value="grandrapids">grandrapids</option>
+                                    <option value="greenbay">greenbay</option>
+                                    <option value="greensboro">greensboro</option>
+                                    <option value="greenville">greenville</option>
+                                    <option value="hampton">hampton</option>
+                                    <option value="harrisburg">harrisburg</option>
+                                    <option value="harrisonburg">harrisonburg</option>
+                                    <option value="hartford">hartford</option>
+                                    <option value="hattiesburg">hattiesburg</option>
+                                    <option value="hickory">hickory</option>
+                                    <option value="hiltonhead">hiltonhead</option>
+                                    <option value="honolulu">honolulu</option>
+                                    <option value="houma">houma</option>
+                                    <option value="houston">houston</option>
+                                    <option value="hudsonvalley">hudsonvalley</option>
+                                    <option value="humboldt">humboldt</option>
+                                    <option value="huntington">huntington</option>
+                                    <option value="huntingtonoh">huntingtonoh</option>
+                                    <option value="huntsville">huntsville</option>
+                                    <option value="huntsvilletx">huntsvilletx</option>
+                                    <option value="imperial">imperial</option>
+                                    <option value="indianapolis">indianapolis</option>
+                                    <option value="inlandempire">inlandempire</option>
+                                    <option value="iowacity">iowacity</option>
+                                    <option value="ithaca">ithaca</option>
+                                    <option value="jackson">jackson</option>
+                                    <option value="jacksonmi">jacksonmi</option>
+                                    <option value="jacksonville">jacksonville</option>
+                                    <option value="janesville">janesville</option>
+                                    <option value="jerseyshore">jerseyshore</option>
+                                    <option value="jonesboro">jonesboro</option>
+                                    <option value="joplin">joplin</option>
+                                    <option value="kalamazoo">kalamazoo</option>
+                                    <option value="kauai">kauai</option>
+                                    <option value="kc">kc</option>
+                                    <option value="keys">keys</option>
+                                    <option value="killeen">killeen</option>
+                                    <option value="klamath">klamath</option>
+                                    <option value="knoxville">knoxville</option>
+                                    <option value="kokomo">kokomo</option>
+                                    <option value="lacrosse">lacrosse</option>
+                                    <option value="lafayette">lafayette</option>
+                                    <option value="lakecharles">lakecharles</option>
+                                    <option value="lakeland">lakeland</option>
+                                    <option value="lansing">lansing</option>
+                                    <option value="laredo">laredo</option>
+                                    <option value="lasalle">lasalle</option>
+                                    <option value="lascruces">lascruces</option>
+                                    <option value="lasvegas">lasvegas</option>
+                                    <option value="lawrence">lawrence</option>
+                                    <option value="lawton">lawton</option>
+                                    <option value="lewiston">lewiston</option>
+                                    <option value="lexington">lexington</option>
+                                    <option value="limaoh">limaoh</option>
+                                    <option value="lincoln">lincoln</option>
+                                    <option value="littlerock">littlerock</option>
+                                    <option value="logan">logan</option>
+                                    <option value="longbeach">longbeach</option>
+                                    <option value="longisland">longisland</option>
+                                    <option value="losangeles">losangeles</option>
+                                    <option value="louisville">louisville</option>
+                                    <option value="loz">loz</option>
+                                    <option value="lubbock">lubbock</option>
+                                    <option value="lynchburg">lynchburg</option>
+                                    <option value="macon">macon</option>
+                                    <option value="madison">madison</option>
+                                    <option value="manhattan">manhattan</option>
+                                    <option value="manhattanks">manhattanks</option>
+                                    <option value="mankato">mankato</option>
+                                    <option value="mansfield">mansfield</option>
+                                    <option value="masoncity">masoncity</option>
+                                    <option value="maui">maui</option>
+                                    <option value="mcallen">mcallen</option>
+                                    <option value="medford">medford</option>
+                                    <option value="memphis">memphis</option>
+                                    <option value="merced">merced</option>
+                                    <option value="meridian">meridian</option>
+                                    <option value="miami">miami</option>
+                                    <option value="milwaukee">milwaukee</option>
+                                    <option value="minneapolis">minneapolis</option>
+                                    <option value="minot">minot</option>
+                                    <option value="mobile">mobile</option>
+                                    <option value="modesto">modesto</option>
+                                    <option value="mohave">mohave</option>
+                                    <option value="monroe">monroe</option>
+                                    <option value="monroemi">monroemi</option>
+                                    <option value="monterey">monterey</option>
+                                    <option value="montgomery">montgomery</option>
+                                    <option value="morgantown">morgantown</option>
+                                    <option value="moseslake">moseslake</option>
+                                    <option value="mtvernon">mtvernon</option>
+                                    <option value="muncie">muncie</option>
+                                    <option value="muskegon">muskegon</option>
+                                    <option value="myrtlebeach">myrtlebeach</option>
+                                    <option value="nashville">nashville</option>
+                                    <option value="newhaven">newhaven</option>
+                                    <option value="newlondon">newlondon</option>
+                                    <option value="neworleans">neworleans</option>
+                                    <option value="newportnews">newportnews</option>
+                                    <option value="norfolk">norfolk</option>
+                                    <option value="northbay">northbay</option>
+                                    <option value="northernmichigan">northernmichigan</option>
+                                    <option value="northjersey">northjersey</option>
+                                    <option value="northmiss">northmiss</option>
+                                    <option value="northplatte">northplatte</option>
+                                    <option value="nova">nova</option>
+                                    <option value="nwct">nwct</option>
+                                    <option value="nwga">nwga</option>
+                                    <option value="ocala">ocala</option>
+                                    <option value="odessa">odessa</option>
+                                    <option value="ogden">ogden</option>
+                                    <option value="oklahomacity">oklahomacity</option>
+                                    <option value="olympia">olympia</option>
+                                    <option value="omaha">omaha</option>
+                                    <option value="orangecounty">orangecounty</option>
+                                    <option value="oregoncoast">oregoncoast</option>
+                                    <option value="orlando">orlando</option>
+                                    <option value="ottumwa">ottumwa</option>
+                                    <option value="outerbanks">outerbanks</option>
+                                    <option value="owensboro">owensboro</option>
+                                    <option value="palmdale">palmdale</option>
+                                    <option value="palmsprings">palmsprings</option>
+                                    <option value="panamacity">panamacity</option>
+                                    <option value="parkersburg">parkersburg</option>
+                                    <option value="pennstate">pennstate</option>
+                                    <option value="pensacola">pensacola</option>
+                                    <option value="peoria">peoria</option>
+                                    <option value="philadelphia">philadelphia</option>
+                                    <option value="phoenix">phoenix</option>
+                                    <option value="pittsburgh">pittsburgh</option>
+                                    <option value="plattsburgh">plattsburgh</option>
+                                    <option value="poconos">poconos</option>
+                                    <option value="porthuron">porthuron</option>
+                                    <option value="portland">portland</option>
+                                    <option value="portsmouth">portsmouth</option>
+                                    <option value="prescott">prescott</option>
+                                    <option value="provo">provo</option>
+                                    <option value="pueblo">pueblo</option>
+                                    <option value="pullman">pullman</option>
+                                    <option value="quadcities">quadcities</option>
+                                    <option value="quincy">quincy</option>
+                                    <option value="racine">racine</option>
+                                    <option value="raleigh">raleigh</option>
+                                    <option value="redding">redding</option>
+                                    <option value="reno">reno</option>
+                                    <option value="richmond">richmond</option>
+                                    <option value="richmondin">richmondin</option>
+                                    <option value="roanoke">roanoke</option>
+                                    <option value="rochester">rochester</option>
+                                    <option value="rochestermn">rochestermn</option>
+                                    <option value="rockford">rockford</option>
+                                    <option value="rockies">rockies</option>
+                                    <option value="roseburg">roseburg</option>
+                                    <option value="roswell">roswell</option>
+                                    <option value="sacramento">sacramento</option>
+                                    <option value="saginaw">saginaw</option>
+                                    <option value="salem">salem</option>
+                                    <option value="saltlakecity">saltlakecity</option>
+                                    <option value="sanantonio">sanantonio</option>
+                                    <option value="sandiego">sandiego</option>
+                                    <option value="sandusky">sandusky</option>
+                                    <option value="sanfernandovalley">sanfernandovalley</option>
+                                    <option value="sangabrielvalley">sangabrielvalley</option>
+                                    <option value="sanjose">sanjose</option>
+                                    <option value="sanluisobispo">sanluisobispo</option>
+                                    <option value="sanmarcos">sanmarcos</option>
+                                    <option value="sanmateo">sanmateo</option>
+                                    <option value="santabarbara">santabarbara</option>
+                                    <option value="santacruz">santacruz</option>
+                                    <option value="santafe">santafe</option>
+                                    <option value="santamaria">santamaria</option>
+                                    <option value="sarasota">sarasota</option>
+                                    <option value="savannah">savannah</option>
+                                    <option value="scranton">scranton</option>
+                                    <option value="seattle">seattle</option>
+                                    <option value="semo">semo</option>
+                                    <option value="sf">sf</option>
+                                    <option value="sheboygan">sheboygan</option>
+                                    <option value="shreveport">shreveport</option>
+                                    <option value="sierravista">sierravista</option>
+                                    <option value="siouxcity">siouxcity</option>
+                                    <option value="siskiyou">siskiyou</option>
+                                    <option value="southbend">southbend</option>
+                                    <option value="southcoast">southcoast</option>
+                                    <option value="southernmaryland">southernmaryland</option>
+                                    <option value="southernwestvirginia">southernwestvirginia</option>
+                                    <option value="southjersey">southjersey</option>
+                                    <option value="spacecoast">spacecoast</option>
+                                    <option value="spokane">spokane</option>
+                                    <option value="springfieldil">springfieldil</option>
+                                    <option value="springfieldmo">springfieldmo</option>
+                                    <option value="statenisland">statenisland</option>
+                                    <option value="statesboro">statesboro</option>
+                                    <option value="stcloud">stcloud</option>
+                                    <option value="stgeorge">stgeorge</option>
+                                    <option value="stillwater">stillwater</option>
+                                    <option value="stjoseph">stjoseph</option>
+                                    <option value="stlouis">stlouis</option>
+                                    <option value="stockton">stockton</option>
+                                    <option value="suffolk">suffolk</option>
+                                    <option value="swmi">swmi</option>
+                                    <option value="swva">swva</option>
+                                    <option value="syracuse">syracuse</option>
+                                    <option value="tacoma">tacoma</option>
+                                    <option value="tallahassee">tallahassee</option>
+                                    <option value="tampa">tampa</option>
+                                    <option value="terrehaute">terrehaute</option>
+                                    <option value="texarkana">texarkana</option>
+                                    <option value="texoma">texoma</option>
+                                    <option value="tippecanoe">tippecanoe</option>
+                                    <option value="toledo">toledo</option>
+                                    <option value="topeka">topeka</option>
+                                    <option value="treasurecoast">treasurecoast</option>
+                                    <option value="tricities">tricities</option>
+                                    <option value="tricitieswa">tricitieswa</option>
+                                    <option value="tucson">tucson</option>
+                                    <option value="tulsa">tulsa</option>
+                                    <option value="tuscaloosa">tuscaloosa</option>
+                                    <option value="tuscarawas">tuscarawas</option>
+                                    <option value="twinfalls">twinfalls</option>
+                                    <option value="twintiers">twintiers</option>
+                                    <option value="tyler">tyler</option>
+                                    <option value="up">up</option>
+                                    <option value="utica">utica</option>
+                                    <option value="valdosta">valdosta</option>
+                                    <option value="ventura">ventura</option>
+                                    <option value="victoriatx">victoriatx</option>
+                                    <option value="virginiabeach">virginiabeach</option>
+                                    <option value="visalia">visalia</option>
+                                    <option value="waco">waco</option>
+                                    <option value="waterloo">waterloo</option>
+                                    <option value="watertown">watertown</option>
+                                    <option value="wausau">wausau</option>
+                                    <option value="wenatchee">wenatchee</option>
+                                    <option value="westchester">westchester</option>
+                                    <option value="westernmaryland">westernmaryland</option>
+                                    <option value="westky">westky</option>
+                                    <option value="westpalmbeach">westpalmbeach</option>
+                                    <option value="westslope">westslope</option>
+                                    <option value="wheeling">wheeling</option>
+                                    <option value="wichita">wichita</option>
+                                    <option value="wichitafalls">wichitafalls</option>
+                                    <option value="williamsport">williamsport</option>
+                                    <option value="wilmington">wilmington</option>
+                                    <option value="winstonsalem">winstonsalem</option>
+                                    <option value="yakima">yakima</option>
+                                    <option value="york">york</option>
+                                    <option value="youngstown">youngstown</option>
+                                    <option value="yuma">yuma</option>
+                                    <option value="zanesville">zanesville</option>
+                                </select>
+                            </a>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Event Date:
+                        </div>
+                        <div class='col-lg-5'>
+                            <input id='diffdate' type="date" max="2014-06-01" min="2013-09-01" value="2014-01-01"/>
+                        </div>
+                    </div>
+                </div>
+
+                <div class='col-lg-6 control-label'>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Use logs:
+                        </div>
+                        <div class='col-lg-5'>
+                            <input id='logged' type="checkbox"/>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Normalize:
+                        </div>
+                        <div class='col-lg-5'>
+                            <input id='normalize' type="checkbox"/>
+                        </div>
+                    </div>
+                    <br><br>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Generate Comparison:
+                        </div>
+                        <div class='col-lg-5'>
+                            <button id="comparison_button">Get Comparison Groups</button>
+                        </div>
+                    </div>
+                    <br> <br>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            <small>
+                                Clicking "Get Comparison Groups" will generate an automatic synthetic
+                                comparison group based on similarity in add features, city size,
+                                and total number of ads. It will also
+                                automatically populate the "Comparison Geography" field with the
+                                chosen comparisons.
+                            </small>
+                        </div>
+                    </div>
+                    <br>
+                    <br>
+                    <div class='col-lg-12 control-label'>
+                        <div class='col-lg-5'>
+                            Get Lines:
+                        </div>
+                        <div class='col-lg-5'>
+                            <button id="clicker">Perform</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+            <div id='torso'>
+                <div id='fake_users1'></div>
+                <!--<div id='fake_users2'></div>-->
+                <div id='missing-y'></div>
+                <div id='missing1'></div>
+                <div id='small-range'></div>
+                <div id='spike' class='main-area-solid'></div>
+                <div id='percentage'></div>
+                <div id='currency'></div>
+                <div id='xnotdate'></div>
+                <div id='glorious_chart'></div>
+                <div id='linked_multi1'></div>
+                <div id='linked_multi2'></div>
+            </div>
+                <div class='row trunk-section'>
+                    <div class='col-lg-4'>
+                        <h2 class='trunk-title'>Difference-in-Differences</h2>
+                        The graph at right shows the number of ads posted
+                        in the adult services section of backpage.com in a
+                        particular month, in a particular geographical
+                        location. Geographical locations come from the
+                        backpage subdomain.  (That is, ads in Washington,
+                        DC are all available at dc.backpage.com)
+                        <div class='legend' id='jeff_legend'></div>
+                    </div>
+                    <div class='col-lg-8'>
+                        <div class='col-lg-12 text-center extended-y-ticks' id='fake_users2'></div>
+                    </div>
+                    <br>
+                </div>
+                <div class='row trunk-section'>
+                    <div class='col-lg-6'>
+                        <div id='dd_results'></div>
+                    </div>
+                    <div class='col-lg-6'>
+                        <div class="dd_text explanation-hidden">
+                        When we want to know if some local policy or event
+                        affected outcomes we need to ask 'compared to
+                        what?' Otherwise we might mistake a change that
+                        happened in many places which happened to coincide
+                        with the policy/event for one which happened
+                        because of the policy/event. The target difference
+                        estimate on the left represents the average
+                        increase (or decrease) in the level of the outcome
+                        between the period before the event of interest and
+                        the period after. The comparison difference
+                        estimate is the same change in the comparison
+                        group. The "Diff-in-Diff" is the how much more
+                        things changed in the target area than in the
+                        comparable place where the policy/event did not
+                        happen. It's one way to benchmark the causal impact
+                        of the policy/event.
+                        <br>
+                        For more on diff-in-diffs, you can check out the
+                        Wikipedia article here: <a href="http://en.wikipedia.org/wiki/Difference_in_differences">http://en.wikipedia.org/wiki/Difference_in_differences</a>
+
+                    </div>
+                    </div>
+                </div>
+                <div class='row trunk-section explanation-hidden'>
+                    <div class='col-lg-6' id="comparison">
+                    </div>
+                    <div class='col-lg-6'>
+                        <div class="dd_text">
+                            This comparison is generated using a logistic
+                            matching model based on features including
+                            overall counts, population, and a composite
+                            measure of the ease of extracting information
+                            from profiles. The locations most similar to
+                            the listed location are shown.
+                        </div>
+                        <br>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class='footer'>
+        </div>
+    </div>
