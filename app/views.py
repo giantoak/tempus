@@ -321,18 +321,14 @@ def location_time():
 def map(path):
     return app.send_static_file(path)
 
+# Generic proxy for OpenCPU endpoints
 @app.route('/ocpu/<path:path>', methods=['GET', 'POST'])
 def ocpu(path):
     # OCPU is hosted on port 80, but this server might not be
     endpoint = urlparse.urljoin('http://localhost:80', 'ocpu/'+ path)
     data = request.get_data()
 
-    if request.method == 'GET':
-        req = requests.get(endpoint, stream = True)
-    elif request.method == 'POST':
-        req = requests.post(endpoint, stream = True, data=data, 
-                headers=request.headers)
-
-    print req.content
-    return Response(req.content)
-
+    raw_req = requests.Request(method=request.method, url=endpoint, data=data,
+            headers=request.headers)
+    req = requests.Session().send(raw_req.prepare())
+    return (req.content, req.status_code, req.headers.items())
