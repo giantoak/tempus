@@ -325,7 +325,7 @@ def map(path):
 @app.route('/ocpu/<path:path>', methods=['GET', 'POST'])
 def ocpu(path):
     # OCPU is hosted on port 80, but this server might not be
-    endpoint = urlparse.urljoin('http://localhost:80', 'ocpu/'+ path)
+    endpoint = urlparse.urljoin(OPENCPUURL, 'ocpu/'+ path)
     data = request.get_data()
 
     raw_req = requests.Request(method=request.method, url=endpoint, data=data,

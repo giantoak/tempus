@@ -1,0 +1,11 @@
+web:
+  build: .
+  command: python /src/run.py
+  ports:
+   - "8080:8080"
+  volumes:
+   - .:/src
+  links:
+   - opencpu
+opencpu:
+  build: opencpu-app/.
