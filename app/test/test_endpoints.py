@@ -11,9 +11,7 @@ import unittest
 import requests
 import urlparse
 from nose.tools import eq_, ok_, raises, nottest, set_trace
-from app.config import OPENCPUURL, dburl
-from runconfig import port
-
+from app.config import OPENCPUURL, dburl, port
 
 # Nose cannot run generator tests inside subclasses of unittest.testcase
 class TestEndpoints(object):
