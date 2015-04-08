@@ -143,8 +143,8 @@ $(document).ready(function() {
         .header("Content-Type", "application/x-www-form-urlencoded")
         .post(postdata, function(error, result) {
             if (verbose){
-                console.log('Result object from server:')
-                console.log(result)
+                console.log('Result/error object from server:')
+                console.log(result, error)
             }
 
             var data = [result.target, result.comparison]

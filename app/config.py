@@ -1,11 +1,11 @@
 import os
 
-dburl=''
+dburl = os.getenv('TEMPUS_DB_URL', '')
 redisurl='localhost'
 
 
-_opencpu_host = os.getenv('OPENCPU_1_PORT_8004_TCP_ADDR', 'localhost')
-_opencpu_port = os.getenv('OPENCPU_1_PORT_8004_TCP_PORT', '8004')
+_opencpu_host = os.getenv('OPENCPU_1_PORT_80_TCP_ADDR', 'localhost')
+_opencpu_port = os.getenv('OPENCPU_1_PORT_80_TCP_PORT', '80')
 
 OPENCPUURL = 'http://' + _opencpu_host + ':' + _opencpu_port
 

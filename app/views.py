@@ -20,7 +20,7 @@ import ast
 import urlparse
 import re
 import os
-
+import sys
 # TODO: split up this
 @app.route('/get_comparison_upload/', methods=['POST'])
 def get_comparison_upload():
@@ -326,9 +326,20 @@ def map(path):
 def ocpu(path):
     # OCPU is hosted on port 80, but this server might not be
     endpoint = urlparse.urljoin(OPENCPUURL, 'ocpu/'+ path)
-    data = request.get_data()
+    request_args = dict(
+            method = request.method,
+            url = endpoint,
+            allow_redirects=True,
+            # Required for OpenCPU
+            headers={'Content-Type': 'application/x-www-form-urlencoded'},
+            timeout=10000
+            )
+    if request.method == 'POST':
+        request_args['data'] = request.get_data()
+    
+    resp = requests.request(**request_args)
+    
+    return make_response(resp.content), resp.status_code
 
-    raw_req = requests.Request(method=request.method, url=endpoint, data=data,
-            headers=request.headers)
-    req = requests.Session().send(raw_req.prepare())
-    return (req.content, req.status_code, req.headers.items())
+
+

@@ -1,7 +1,6 @@
 *.pyc
 *.swp
-runconfig.py
-app/config.py
+tempus.env
 app/static/map/
 app/upload/*
 flask-env/

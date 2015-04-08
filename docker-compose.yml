@@ -1,11 +1,15 @@
 web:
   build: .
-  command: python /src/run.py
+  command: python /src/_run.py
   ports:
    - "8080:8080"
   volumes:
    - .:/src
   links:
    - opencpu
+  env_file:
+   - tempus.env
 opencpu:
   build: opencpu-app/.
+  expose: 
+   - "80"
