@@ -15,9 +15,7 @@ COPY . /src
 
 # Add and install Python modules
 RUN cd /src && \
-    pip install -r requirements.txt  && \
-    cp runconfig.py.template runconfig.py && \
-    cp app/config.py.template app/config.py
+    pip install -r requirements.txt 
 
 # Expose
 EXPOSE 8080

@@ -1,6 +1,6 @@
 web:
   build: .
-  command: python /src/_run.py
+  command: /src/run.sh
   ports:
    - "8080:8080"
   volumes:
