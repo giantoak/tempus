@@ -4,4 +4,10 @@ cd $BASEDIR
 
 set -a
 source tempus.env
-gunicorn -w 4 -b 0.0.0.0:$TEMPUS_PORT app:app
+if [ "$DEBUG" = true ]
+then
+    python _run.py
+else
+    gunicorn -w 4 -b 0.0.0.0:$TEMPUS_PORT app:app
+fi
+
