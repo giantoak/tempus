@@ -9,9 +9,12 @@ sys.path.append(os.path.dirname(os.path.dirname(os.path.dirname(
 import app
 import unittest
 import requests
+from requests.exceptions import HTTPError
 import urlparse
 from nose.tools import eq_, ok_, raises, nottest, set_trace
 from app.config import OPENCPUURL, dburl, port
+from app.helpers import ocpu_wrapper
+import json
 
 # Nose cannot run generator tests inside subclasses of unittest.testcase
 class TestEndpoints(object):
@@ -25,13 +28,13 @@ class TestEndpoints(object):
 
     def visit(self, endpoint, method, status, **args):
         rv = self.app.open(endpoint, method=method, **args)
-        eq_(rv.status_code, status)
+        eq_(rv.status_code, status, rv.get_data())
 
     ########################################################################
     ### Test functions
     ########################################################################
+    @nottest
     def test_opencpu_endpoint_generic_handles(self):
-        '''Are the opencpu endpoints returning expected values?'''
         # Currently used endpoints
         funcs = ['diffindiff', 'store_csv', 'get_features_data']
         endpoints = map(self.construct_endpoint_url, funcs)
@@ -49,5 +52,18 @@ class TestEndpoints(object):
         is requested?'''
         
         endpoint = self.construct_endpoint_url('______nonexistent')
-        
         self.visit(endpoint, 'GET', 400)
+
+
+    def test_comparison_upload_expected_return_structures(self):
+        
+        # TODO:
+        # This test should not needs to be updated whenever there is a new
+        # naming convention 
+        self.visit('get_comparison_upload/', 'POST', 200, 
+                data=json.dumps({'targetRegion': 'dc'}))
+
+        self.visit('get_comparison_upload/', 'POST', 400, 
+                data=json.dumps({'targetRegion': '__nonexistent'}))
+    
+

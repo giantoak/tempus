@@ -9,6 +9,7 @@ from flask import redirect
 from flask import Response
 from flask import request
 from flask import make_response
+from flask import abort
 import requests
 from helpers import *
 import datetime
@@ -43,12 +44,15 @@ def get_comparison_upload():
     print 'About to create ocpu object in %s' % str(datetime.datetime.now() - start)
     d = ocpu_wrapper(url=endpoint, data=dict_to_r_args(data), header=header)
     print ' ocpu object created in %s' % str(datetime.datetime.now() - start)
-    d.perform()
+    res = d.perform()
     print 'Main query performed in %s' % str(datetime.datetime.now() - start)
-    out = d.get_result_object()
 
+    if not res.ok:
+        return abort(res.status_code)
 
-    return Response(json.dumps(out),  mimetype='application/json')
+    req = d.get_ocpu_response()
+
+    return make_response(req.content), req.status_code
     # Note: jsonify() will not take a list of dicts
     #return jsonify(d.get_result_object())
 
@@ -82,9 +86,14 @@ def get_diffindiff_upload():
     print(dict_to_r_args(data))
     d = ocpu_wrapper(url=endpoint, data=dict_to_r_args(data), header=header)
     print('ocpu object created in %s' % str(datetime.datetime.now() - start))
-    d.perform()
+    res = d.perform()
     print('Main query performed in %s' % str(datetime.datetime.now() - start))
-    return Response(json.dumps(d.get_result_object()),  mimetype='application/json')
+
+    if not res.ok:
+        abort(res.status_code)
+
+    req = d.get_ocpu_response()
+    return make_response(req.content), req.status_code
 
 
 # TODO: refactor geotag into its own module

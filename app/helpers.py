@@ -17,27 +17,40 @@ class ocpu_wrapper():
         self.result = None
         self.session_id = None
         self.endpoints = None
+
     def perform(self):
         print('Calling %s' % self.url)
         self.result = requests.post(self.url, files=self.files, headers=self.header, data=self.data)
         # perform the initial search
         if self.result.status_code == 400:
             print('Error: %s' % self.result.text)
-        self.result.raise_for_status()
 
-        self.endpoints = self.result.text.split('\n')
-        # Set the list of endpoints
-        self.session_id = self.endpoints[0][10:21]
-        # Get the session ID
-    def get_result_object(self, format='json'):
+        else:
+            self.endpoints = self.result.text.split('\n')
+            # Set the list of endpoints
+            # Get the session ID
+            self.session_id = self.endpoints[0][10:21]
+
+        return self.result
+    
+    def get_ocpu_response(self, path='R/.val/json'):
+        req = requests.get(os.path.join(self.baseurl, 'ocpu','tmp', 
+            self.session_id, path))
+        return req
+        
+
+    def get_result_object(self, ext='json'):
         """
         Gets the result object of this call as a json object
         """
         if not self.result:
             raise(NameError('Search not performed!'))
-        req = requests.get(os.path.join(self.baseurl, 'ocpu','tmp', self.session_id, 'R','.val', format))
+        req = requests.get(os.path.join(self.baseurl, 'ocpu','tmp', 
+            self.session_id, 'R','.val', ext))
+
         req.raise_for_status()
         return req.json()
+
     def get_result_pointer(self):
         return self.session_id + '::.val'
 
