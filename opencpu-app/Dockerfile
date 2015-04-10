@@ -3,6 +3,9 @@ MAINTAINER Sam Zhang <sam.zhang@giantoak.com>
 
 COPY . /src
 
+# Our version of server.conf declares preloaded libraries
+COPY server.conf /etc/opencpu/server.conf
+
 # Install R packages
 RUN cd /src && \
     R --no-save < install_r_packages.r && \
