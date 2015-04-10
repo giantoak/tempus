@@ -6,6 +6,9 @@ COPY . /src
 # Our version of server.conf declares preloaded libraries
 COPY server.conf /etc/opencpu/server.conf
 
+# Build R package
+RUN R --vanilla CMD build '/src/rlines' --no-manual --no-resave-data
+
 # Install R packages
 RUN cd /src && \
     R --no-save < install_r_packages.r && \
