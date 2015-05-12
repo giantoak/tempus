@@ -40,55 +40,36 @@ diffindiff<-function(target.region, comparison.region.set, event.date, logged=FA
   #  4: postTRUE:groupTarget
   model.results<-coef(summary(model))
   vcov.matrix<-vcov(model)
-  dd<-list(
-    b=model.results[4,'Estimate'], 
-    se=model.results[4, "Std. Error"],
-    t=model.results[4,"t value"]
-  )
-  dd$p<-2*pt(-abs(dd$t),df=df-1)
-  # The diff-in-diff estimate is just 4: postTRUE:groupTarget
-#  target.change<-
-#    list(
-#      b=model.results[1,'Estimate'], 
-#      se=model.results[1, "Std. Error"],
-#      t=model.results[1,"t value"]
-#    )# The pre-post difference in the target variable
+  ###
+  # We build a dataframe here which has the estimate, std error, t stat, and p value for 
+  # 3 key estimates that we'd like to see:
+  # -The diff in diff estimate
+  # -The change at the event date in the target group
+  # -The change at the event date in the control group
+  d<-data.frame(b=rep(NA,3), se=rep(NA,3), t=rep(NA,3), p=rep(NA,3),row.names=c('diff_in_diff','target_diff','comparison_diff'))
+  d['diff_in_diff','b'] <- model.results[4,'Estimate']
+  d['diff_in_diff','se'] <- model.results[4, "Std. Error"]
+  d['diff_in_diff','t'] <- model.results[4, "t value"]
+  d['diff_in_diff','p'] <- 2*pt(-abs(model.results[4, "t value"]),df=df-1)
+
   target.change.vec<-c(0,1,0,1)
   # The target change is the sum of the 2nd and 4th variables (set target=True and change post from 1 to 0)
   b.target<-target.change.vec %*% model.results[,'Estimate']
   se.target<-sqrt(target.change.vec %*% vcov.matrix %*% target.change.vec)
-  target.change<-list(
-    b=b.target[1,1],
-    se=se.target[1,1],
-    t=b.target[1,1]/se.target[1,1]
-    )
-  target.change$p<-2*pt(-abs(target.change$t),df=df-1)
-  # Note: we have to compute p manually since non-unit vectors will have covariance terms in SE
-  # and hence won't be in the main results
+  d['target_diff','b'] <- b.target[1,1]
+  d['target_diff','se'] <- se.target[1,1]
+  d['target_diff','t'] <- b.target[1,1]/se.target[1,1]
+  d['target_diff','p'] <- 2*pt(-abs(b.target[1,1]/se.target[1,1]),df=df-1)
   
   comparison.vec<-c(0,1,0,0)
   # The comparison group is the sum of the 1st and 4th variables
   b.comparison<-comparison.vec %*% model.results[,'Estimate']
   se.comparison<-sqrt(comparison.vec %*% vcov.matrix %*% comparison.vec)
-  comparison.change<-list(
-    b=b.comparison[1,1],
-    se=se.comparison[1,1],
-    t=b.comparison[1,1]/se.comparison[1,1]
-  )
-  comparison.change$p<-2*pt(-abs(comparison.change$t),df=df-1)
-  # Note: we have to compute p manually since non-unit vectors will have covariance terms in SE
-  # and hence won't be in the main results
-#comparison.change<-mean(data[data$group == "comparison" & data$post,'counts']) - mean(data[data$group == "comparison" & data$post == FALSE,'counts'])
-  comparison<-data[data$group == "Comparison",c('date','counts')]
-  comparison$date <- strftime(comparison$date,"%Y-%m-%d")
-  target<-data[data$group == "Target",c('date','counts')]
-  target$date <- strftime(target$date,"%Y-%m-%d")
-  data<-reshape2::dcast(data=data, formula=date~group, value=counts)
-  return(list(data=data,
-              comparison=comparison,
-              target=target,
-              #model=model, 
-              diff_in_diff=dd, 
-              target_diff=target.change, 
-              comparison_diff=comparison.change))
+  d['comparison_diff','b'] <- b.comparison[1,1]
+  d['comparison_diff','se'] <- se.comparison[1,1]
+  d['comparison_diff','t'] <- b.comparison[1,1]/se.comparison[1,1]
+  d['comparison_diff','p'] <- 2*pt(-abs(b.comparison[1,1]/se.comparison[1,1]),df=df-1)
+  
+  names(d)<-c('estimate','standard error','t-statistic','p-value')
+  return(d)
 }
